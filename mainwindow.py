@@ -9,24 +9,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.actionLocation.triggered.connect(self.new_location)
 
-    def new_location(self, location_widget):
-        print("todo: open new location widget")
+
+    def new_location(self):
         self.local = Ui_Form()
-        self.local.setupUi(self)
-        self.mdiArea.addSubWindow(self.local)
-        self.local.show()
-
-    """
-        print("todo: open new location widget")
-        self.subwindow = QMdiSubWindow()
-        self.subwindow.setWidget(Ui_Form().setupUi(Ui_Form))
-        self.mdiArea.addSubWindow(self.subwindow)
-        self.subwindow.show()
-
-"""
-
-
-
+        self.local_widget = QWidget()
+        self.local.setupUi(self.local_widget)
+        self.mdiArea.addSubWindow(self.local_widget)
+        self.local_widget.show()
 
 
 
