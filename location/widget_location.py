@@ -76,4 +76,4 @@ class WidgetLocation(QWidget, Ui_Form):
         self.model_location.save_all()
 
     def close_widget(self):
-        self.close()
+        self.parentWidget().close()
