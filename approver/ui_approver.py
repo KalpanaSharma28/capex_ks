@@ -30,39 +30,24 @@ class Ui_Form(object):
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.tableView = QTableView(Form)
         self.tableView.setObjectName(u"tableView")
-
         self.verticalLayout.addWidget(self.tableView)
-
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.button_create = QPushButton(Form)
         self.button_create.setObjectName(u"button_create")
-
         self.horizontalLayout.addWidget(self.button_create)
-
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
         self.horizontalLayout.addItem(self.horizontalSpacer)
-
         self.button_submit = QPushButton(Form)
         self.button_submit.setObjectName(u"button_submit")
-
         self.horizontalLayout.addWidget(self.button_submit)
-
         self.button_close = QPushButton(Form)
         self.button_close.setObjectName(u"button_close")
-
         self.horizontalLayout.addWidget(self.button_close)
-
-
         self.verticalLayout.addLayout(self.horizontalLayout)
-
-
         self.verticalLayout_2.addLayout(self.verticalLayout)
 
-
         self.retranslateUi(Form)
-
         QMetaObject.connectSlotsByName(Form)
     # setupUi
 

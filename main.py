@@ -12,7 +12,6 @@ if __name__ == "__main__":
     logging.debug('%s.%s', __name__, inspect.currentframe().f_code.co_name)
 
     capex_db = CapexDB()
-
     app = QApplication(sys.argv)
     window = MainWindow()
     window.show()

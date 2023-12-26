@@ -49,10 +49,10 @@ class Ui_Form(object):
 
         self.horizontalLayout.addWidget(self.button_submit)
 
-        self.pushButton_3 = QPushButton(Form)
-        self.pushButton_3.setObjectName(u"pushButton_3")
+        self.button_close = QPushButton(Form)
+        self.button_close.setObjectName(u"pushButton_3")
 
-        self.horizontalLayout.addWidget(self.pushButton_3)
+        self.horizontalLayout.addWidget(self.button_close)
 
 
         self.verticalLayout.addLayout(self.horizontalLayout)
@@ -70,6 +70,6 @@ class Ui_Form(object):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
         self.button_create.setText(QCoreApplication.translate("Form", u"Create", None))
         self.button_submit.setText(QCoreApplication.translate("Form", u"Submit", None))
-        self.pushButton_3.setText(QCoreApplication.translate("Form", u"Close", None))
+        self.button_close.setText(QCoreApplication.translate("Form", u"Close", None))
     # retranslateUi
 

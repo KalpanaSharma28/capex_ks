@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
-import sys
 
 ################################################################################
-## Form generated from reading UI file 'mainwindowfAQzCJ.ui'
+## Form generated from reading UI file 'mainwindoweCoCZV.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.0
 ##
@@ -19,24 +18,13 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QTransform)
 from PySide6.QtWidgets import (QApplication, QMainWindow, QMdiArea, QMenu,
     QMenuBar, QSizePolicy, QStatusBar, QToolBar,
-    QVBoxLayout, QWidget, QMdiSubWindow)
+    QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
-
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(800, 600)
-        self.actionCapex = QAction(MainWindow)
-        self.actionCapex.setObjectName(u"actionCapex")
-        icon = QIcon()
-        icon.addFile(u"icons/Examples.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.actionCapex.setIcon(icon)
-        self.actionClose = QAction(MainWindow)
-        self.actionClose.setObjectName(u"actionClose")
-        icon1 = QIcon()
-        icon1.addFile(u"icons/close.jpg", QSize(), QIcon.Normal, QIcon.Off)
-        self.actionClose.setIcon(icon1)
         self.actionApprover = QAction(MainWindow)
         self.actionApprover.setObjectName(u"actionApprover")
         self.actionArea = QAction(MainWindow)
@@ -49,10 +37,8 @@ class Ui_MainWindow(object):
         self.actionExpType.setObjectName(u"actionExpType")
         self.actionFrequency = QAction(MainWindow)
         self.actionFrequency.setObjectName(u"actionFrequency")
-
         self.actionLocation = QAction(MainWindow)
         self.actionLocation.setObjectName(u"actionLocation")
-
         self.actionNature = QAction(MainWindow)
         self.actionNature.setObjectName(u"actionNature")
         self.actionOrigin = QAction(MainWindow)
@@ -69,10 +55,16 @@ class Ui_MainWindow(object):
         self.actionVendor.setObjectName(u"actionVendor")
         self.actionUnit = QAction(MainWindow)
         self.actionUnit.setObjectName(u"actionUnit")
-        self.actionCapex_2 = QAction(MainWindow)
-        self.actionCapex_2.setObjectName(u"actionCapex_2")
-        self.actionClose_2 = QAction(MainWindow)
-        self.actionClose_2.setObjectName(u"actionClose_2")
+        self.actionCapex = QAction(MainWindow)
+        self.actionCapex.setObjectName(u"actionCapex")
+        icon = QIcon()
+        icon.addFile(u"icons/Dev.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.actionCapex.setIcon(icon)
+        self.actionClose = QAction(MainWindow)
+        self.actionClose.setObjectName(u"actionClose")
+        icon1 = QIcon()
+        icon1.addFile(u"icons/close.jpg", QSize(), QIcon.Normal, QIcon.Off)
+        self.actionClose.setIcon(icon1)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
@@ -100,8 +92,8 @@ class Ui_MainWindow(object):
 
         self.menubar.addAction(self.menuCapex.menuAction())
         self.menubar.addAction(self.menuOptions.menuAction())
-        self.menuCapex.addAction(self.actionCapex_2)
-        self.menuCapex.addAction(self.actionClose_2)
+        self.menuCapex.addAction(self.actionCapex)
+        self.menuCapex.addAction(self.actionClose)
         self.menuOptions.addAction(self.actionApprover)
         self.menuOptions.addAction(self.actionArea)
         self.menuOptions.addAction(self.actionCategory)
@@ -127,8 +119,6 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Capex Application", None))
-        self.actionCapex.setText(QCoreApplication.translate("MainWindow", u"Capex", None))
-        self.actionClose.setText(QCoreApplication.translate("MainWindow", u"Close", None))
         self.actionApprover.setText(QCoreApplication.translate("MainWindow", u"Approver", None))
         self.actionArea.setText(QCoreApplication.translate("MainWindow", u"Area", None))
         self.actionCategory.setText(QCoreApplication.translate("MainWindow", u"Category", None))
@@ -144,8 +134,8 @@ class Ui_MainWindow(object):
         self.actionUOM.setText(QCoreApplication.translate("MainWindow", u"UOM", None))
         self.actionVendor.setText(QCoreApplication.translate("MainWindow", u"Vendor", None))
         self.actionUnit.setText(QCoreApplication.translate("MainWindow", u"Unit", None))
-        self.actionCapex_2.setText(QCoreApplication.translate("MainWindow", u"Capex", None))
-        self.actionClose_2.setText(QCoreApplication.translate("MainWindow", u"Close", None))
+        self.actionCapex.setText(QCoreApplication.translate("MainWindow", u"Capex", None))
+        self.actionClose.setText(QCoreApplication.translate("MainWindow", u"Close", None))
         self.menuCapex.setTitle(QCoreApplication.translate("MainWindow", u"Capex", None))
         self.menuOptions.setTitle(QCoreApplication.translate("MainWindow", u"Options", None))
         self.toolBar.setWindowTitle(QCoreApplication.translate("MainWindow", u"toolBar", None))

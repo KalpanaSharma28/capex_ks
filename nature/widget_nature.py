@@ -1,20 +1,20 @@
 import logging
 from PySide6.QtCore import Qt, QCoreApplication
 from PySide6.QtWidgets import QAbstractItemView, QWidget
-from approver.model_approver import ModelApprover
-from approver.ui_approver import Ui_Form
+from nature.model_nature import ModelNature
+from nature.ui_nature import Ui_Form
 
-class WidgetApprover(QWidget, Ui_Form):
+class WidgetNature(QWidget, Ui_Form):
 
     def __init__(self):
         super().__init__()
         self.setupUi(self)
 
         self.setAttribute(Qt.WA_DeleteOnClose)
-        self.setWindowTitle(QCoreApplication.translate("maintain_approver", "Maintain Approver", None))
+        self.setWindowTitle(QCoreApplication.translate("maintain_nature", "Maintain Nature", None))
 
-        self.model_approver = ModelApprover()
-        self.tableView.setModel(self.model_approver)
+        self.model_nature = ModelNature()
+        self.tableView.setModel(self.model_nature)
 
         self.setup_tableview()
         self.connect_signals()
@@ -22,8 +22,8 @@ class WidgetApprover(QWidget, Ui_Form):
         self.select_data()
 
     def setup_tableview(self):
-        self.tableView.setColumnHidden(self.model_approver.idx_id, False)
-        self.tableView.setColumnHidden(self.model_approver.idx_name, False)
+        self.tableView.setColumnHidden(self.model_nature.idx_id, False)
+        self.tableView.setColumnHidden(self.model_nature.idx_name, False)
 
         self.tableView.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.tableView.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
@@ -37,17 +37,17 @@ class WidgetApprover(QWidget, Ui_Form):
         pass
 
     def select_data(self):
-        if self.model_approver.select():
+        if self.model_nature.select():
             self.tableView.resizeColumnsToContents()
         else:
             logging.debug("No records selected from model.")
 
     def insert_row(self):
-        self.row = self.model_approver.insert_row()
+        self.row = self.model_nature.insert_row()
 
     def save_all(self):
         self.button_submit.setFocus()
-        self.model_approver.save_all()
+        self.model_nature.save_all()
 
     def close_widget(self):
         self.parentWidget().close()

@@ -33,8 +33,8 @@
     <property name="title">
      <string>Capex</string>
     </property>
-    <addaction name="actionCapex_2"/>
-    <addaction name="actionClose_2"/>
+    <addaction name="actionCapex"/>
+    <addaction name="actionClose"/>
    </widget>
    <widget class="QMenu" name="menuOptions">
     <property name="title">
@@ -73,24 +73,6 @@
    <addaction name="actionCapex"/>
    <addaction name="actionClose"/>
   </widget>
-  <action name="actionCapex">
-   <property name="icon">
-    <iconset>
-     <normaloff>icons/Examples.svg</normaloff>icons/Examples.svg</iconset>
-   </property>
-   <property name="text">
-    <string>Capex</string>
-   </property>
-  </action>
-  <action name="actionClose">
-   <property name="icon">
-    <iconset>
-     <normaloff>icons/close.jpg</normaloff>icons/close.jpg</iconset>
-   </property>
-   <property name="text">
-    <string>Close</string>
-   </property>
-  </action>
   <action name="actionApprover">
    <property name="text">
     <string>Approver</string>
@@ -166,12 +148,20 @@
     <string>Unit</string>
    </property>
   </action>
-  <action name="actionCapex_2">
+  <action name="actionCapex">
+   <property name="icon">
+    <iconset>
+     <normaloff>icons/Dev.svg</normaloff>icons/Dev.svg</iconset>
+   </property>
    <property name="text">
     <string>Capex</string>
    </property>
   </action>
-  <action name="actionClose_2">
+  <action name="actionClose">
+   <property name="icon">
+    <iconset>
+     <normaloff>icons/close.jpg</normaloff>icons/close.jpg</iconset>
+   </property>
    <property name="text">
     <string>Close</string>
    </property>
