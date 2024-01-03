@@ -15,6 +15,7 @@ from subcategory.widget_subcategory import WidgetSubcategory
 from Unit.widget_unit import WidgetUnit
 from uom.widget_uom import WidgetUOM
 from vendor.widget_vendor import WidgetVendor
+from capex.widget_capex import WidgetCapex
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -36,6 +37,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.widget_unit = None
         self.widget_uom =None
         self.widget_vendor = None
+        self.widget_capex = None
+
         self.setupUi(self)
         self.actionLocation.triggered.connect(self.new_location)
         self.actionApprover.triggered.connect(self.new_approver)
@@ -52,6 +55,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionUnit.triggered.connect(self.new_unit)
         self.actionUOM.triggered.connect(self.new_uom)
         self.actionVendor.triggered.connect(self.new_vendor)
+
+        self.actionCapex.triggered.connect(self.capex)
 
         self.actionClose.triggered.connect(self.close)
 
@@ -130,4 +135,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.mdiArea.addSubWindow(self.widget_vendor)
         self.widget_vendor.show()
 
-
+    def capex(self):
+        self.widget_capex = WidgetCapex()
+        self.mdiArea.addSubWindow(self.widget_capex)
+        self.widget_capex.show()
