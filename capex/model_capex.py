@@ -31,7 +31,7 @@ class ModelCapex(QSqlRelationalTableModel):
         self.idx_unitid = self.fieldIndex('UnitID')
         self.idx_areaid = self.fieldIndex('AreaID')
         self.idx_categoryid = self.fieldIndex('CategoryID')
-        self.idx_subcategoryid = self.fieldIndex('SubCategory')
+        self.idx_subcategoryid = self.fieldIndex('SubCategoryID')
         self.idx_currencyid = self.fieldIndex('CurrencyID')
         self.idx_uomid = self.fieldIndex('UOMID')
         self.idx_recommendationid = self.fieldIndex('RecommendationID')
@@ -60,7 +60,7 @@ class ModelCapex(QSqlRelationalTableModel):
         self.setHeaderData(self.idx_approverid, Qt.Horizontal, "Approver ID")
         self.setHeaderData(self.idx_areaid, Qt.Horizontal, "Area ID")
         self.setHeaderData(self.idx_categoryid, Qt.Horizontal, "Category ID")
-        self.setHeaderData(self.idx_subcategoryid, Qt.Horizontal, "SubCategory")
+        self.setHeaderData(self.idx_subcategoryid, Qt.Horizontal, "SubCategory ID")
         self.setHeaderData(self.idx_currencyid, Qt.Horizontal, "Currency ID")
         self.setHeaderData(self.idx_exptypeid, Qt.Horizontal, "ExpType ID")
         self.setHeaderData(self.idx_frequencyid, Qt.Horizontal, "Frequency ID")
@@ -75,6 +75,24 @@ class ModelCapex(QSqlRelationalTableModel):
 
         self.setSort(self.idx_capexid, Qt.SortOrder.AscendingOrder)
 
+        self.setRelation(self.idx_locationid, QSqlRelation("Location", "LocationID", "LocationName"))
+        self.setRelation(self.idx_approverid, QSqlRelation("Approver", "ApproverID", "ApproverName"))
+        self.setRelation(self.idx_areaid, QSqlRelation("Area", "AreaID", "AreaName"))
+        self.setRelation(self.idx_categoryid, QSqlRelation("Category", "CategoryID", "Categoryname"))
+        self.setRelation(self.idx_currencyid, QSqlRelation("Currency", "CurrencyID", "CurrencyName"))
+        self.setRelation(self.idx_exptypeid, QSqlRelation("Exptype", "ExptypeID", "ExptypeName"))
+        self.setRelation(self.idx_frequencyid, QSqlRelation("Frequency", "FrequencyID", "FrequencyName"))
+        self.setRelation(self.idx_natureid, QSqlRelation("Nature", "NatureID", "NatureName"))
+        self.setRelation(self.idx_originid, QSqlRelation("Origin", "OriginID", "OriginName"))
+        self.setRelation(self.idx_recommendationid, QSqlRelation("Recommendation", "RecommendationID", "Recommendation"))
+        self.setRelation(self.idx_statusid, QSqlRelation("Status", "StatusID", "StatusName"))
+        self.setRelation(self.idx_subcategoryid, QSqlRelation("SubCategory", "SubCategoryID", "SubCategoryName"))
+        self.setRelation(self.idx_unitid, QSqlRelation("Unit", "UnitID", "UnitName"))
+        self.setRelation(self.idx_uomid, QSqlRelation("UOM", "UOMID", "UOMName"))
+        self.setRelation(self.idx_vendorid, QSqlRelation("Vendor", "VendorID", "VendorName"))
+
+
+
     """
     def insert_row(self):
         row = self.rowCount()
@@ -87,3 +105,4 @@ class ModelCapex(QSqlRelationalTableModel):
     """
     def save_all(self):
         return self.submitAll()
+

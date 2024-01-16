@@ -10,12 +10,12 @@ class ModelSubcategory(QSqlRelationalTableModel):
         super(ModelSubcategory, self).__init__()
         logging.debug('%s.%s', __name__, inspect.currentframe().f_code.co_name)
 
-        self.setTable("Subcategory")
+        self.setTable("SubCategory")
         self.setEditStrategy(QSqlTableModel.EditStrategy.OnManualSubmit)
         self.setJoinMode(QSqlRelationalTableModel.JoinMode.LeftJoin)
 
-        self.idx_id = self.fieldIndex('SubcategoryID')
-        self.idx_name = self.fieldIndex('SubcategoryName')
+        self.idx_id = self.fieldIndex('SubCategoryID')
+        self.idx_name = self.fieldIndex('SubCategoryName')
 
         self.setHeaderData(self.idx_id, Qt.Horizontal, "ID")
         self.setHeaderData(self.idx_name, Qt.Horizontal, "Subcategory Name")
@@ -26,8 +26,8 @@ class ModelSubcategory(QSqlRelationalTableModel):
         row = self.rowCount()
         record = self.record()
 
-        record.setValue("SubcategoryID", None)
-        record.setValue("SubcategoryName", "?name?")
+        record.setValue("SubCategoryID", None)
+        record.setValue("SubCategoryName", "?name?")
 
         return self.insertRecord(row, record)
 

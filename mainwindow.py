@@ -35,7 +35,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.widget_status = None
         self.widget_subcategory = None
         self.widget_unit = None
-        self.widget_uom =None
+        self.widget_uom = None
         self.widget_vendor = None
         self.widget_capex = None
 

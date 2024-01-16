@@ -16,7 +16,7 @@ class ModelRecommendation(QSqlRelationalTableModel):
         self.setJoinMode(QSqlRelationalTableModel.JoinMode.LeftJoin)
 
         self.idx_id = self.fieldIndex('RecommendationID')
-        self.idx_name = self.fieldIndex('RecommendationName')
+        self.idx_name = self.fieldIndex('Recommendation')
 
         self.setHeaderData(self.idx_id, Qt.Horizontal, "ID")
         self.setHeaderData(self.idx_name, Qt.Horizontal, "Recommendation Name")
