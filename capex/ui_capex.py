@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'untitlediAIKHg.ui'
+## Form generated from reading UI file 'capexAlKqfA.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.0
+## Created by: Qt User Interface Compiler version 6.6.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -23,7 +23,6 @@ class Ui_Form_capex(object):
     def setupUi(self, Form_capex):
         if not Form_capex.objectName():
             Form_capex.setObjectName(u"Form_capex")
-        Form_capex.resize(400, 300)
         self.verticalLayout_2 = QVBoxLayout(Form_capex)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout = QVBoxLayout()
@@ -62,7 +61,7 @@ class Ui_Form_capex(object):
     # setupUi
 
     def retranslateUi(self, Form_capex):
-        Form_capex.setWindowTitle(QCoreApplication.translate("Form_capex", u"Form", None))
+        Form_capex.setWindowTitle(QCoreApplication.translate("Form_capex", u"Capex", None))
         self.button_submit.setText(QCoreApplication.translate("Form_capex", u"Submit", None))
         self.button_close.setText(QCoreApplication.translate("Form_capex", u"Close", None))
     # retranslateUi

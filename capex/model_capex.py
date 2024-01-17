@@ -64,7 +64,9 @@ class ModelCapex(QSqlRelationalTableModel):
         self.setHeaderData(self.idx_currencyid, Qt.Horizontal, "Currency ID")
         self.setHeaderData(self.idx_exptypeid, Qt.Horizontal, "ExpType ID")
         self.setHeaderData(self.idx_frequencyid, Qt.Horizontal, "Frequency ID")
-        self.setHeaderData(self.idx_locationid, Qt.Horizontal, "Location ID")
+        # `ID` is not required in display captions. `Location ID` changed to `Location`.
+        #  TODO: Make similar change in other captions with ID.
+        self.setHeaderData(self.idx_locationid, Qt.Horizontal, "Location")
         self.setHeaderData(self.idx_natureid, Qt.Horizontal, "Nature ID")
         self.setHeaderData(self.idx_originid, Qt.Horizontal, "Origin ID")
         self.setHeaderData(self.idx_recommendationid, Qt.Horizontal, "Recommendation ID")
@@ -75,7 +77,15 @@ class ModelCapex(QSqlRelationalTableModel):
 
         self.setSort(self.idx_capexid, Qt.SortOrder.AscendingOrder)
 
-        self.setRelation(self.idx_locationid, QSqlRelation("Location", "LocationID", "LocationName"))
+        # QSqlRelation Object is created first and then it is used in setRelation function
+        #   to make code simple to read - one step at a time.
+        self.relation_location = QSqlRelation("Location", "LocationID", "LocationName")
+        self.setRelation(self.idx_locationid, self.relation_location)
+
+        # Adding this propery, it will be possible to refer to related model:
+        #   Currently this is not used in the capex program.
+        # self.relational_model_location = self.relationModel(self.idx_locationid)
+
         self.setRelation(self.idx_approverid, QSqlRelation("Approver", "ApproverID", "ApproverName"))
         self.setRelation(self.idx_areaid, QSqlRelation("Area", "AreaID", "AreaName"))
         self.setRelation(self.idx_categoryid, QSqlRelation("Category", "CategoryID", "Categoryname"))
@@ -105,4 +115,3 @@ class ModelCapex(QSqlRelationalTableModel):
     """
     def save_all(self):
         return self.submitAll()
-

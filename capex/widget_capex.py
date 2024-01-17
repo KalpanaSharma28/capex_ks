@@ -2,6 +2,7 @@ import logging
 
 from PySide6.QtCore import Qt, QCoreApplication
 from PySide6.QtWidgets import QAbstractItemView, QWidget
+from PySide6.QtSql import QSqlRelationalDelegate
 
 from capex.model_capex import ModelCapex
 from capex.ui_capex import Ui_Form_capex
@@ -18,6 +19,9 @@ class WidgetCapex(QWidget, Ui_Form_capex):
 
         self.model_capex = ModelCapex()
         self.tableView.setModel(self.model_capex)
+        # For ComboBox for Foreign Key fields in capex table.
+        #   See also usage in setup_tableview function.
+        self.relational_delegate = QSqlRelationalDelegate()
 
         self.setup_tableview()
         self.connect_signals()
@@ -25,7 +29,7 @@ class WidgetCapex(QWidget, Ui_Form_capex):
         self.select_data()
 
     def setup_tableview(self):
-        self.tableView.setColumnHidden(self.model_capex.idx_capexid, False)
+        self.tableView.setColumnHidden(self.model_capex.idx_capexid, True)
         self.tableView.setColumnHidden(self.model_capex.idx_budgetno, False)
         self.tableView.setColumnHidden(self.model_capex.idx_proposaldate, False)
         self.tableView.setColumnHidden(self.model_capex.idx_sn, False)
@@ -54,6 +58,7 @@ class WidgetCapex(QWidget, Ui_Form_capex):
 
         self.tableView.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.tableView.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
+        self.tableView.setItemDelegate(self.relational_delegate)
 
     def connect_signals(self):
         self.button_submit.clicked.connect(self.save_all)

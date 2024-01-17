@@ -138,4 +138,4 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def capex(self):
         self.widget_capex = WidgetCapex()
         self.mdiArea.addSubWindow(self.widget_capex)
-        self.widget_capex.show()
+        self.widget_capex.showMaximized()
