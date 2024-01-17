@@ -63,6 +63,7 @@ class WidgetCapex(QWidget, Ui_Form_capex):
     def connect_signals(self):
         self.button_submit.clicked.connect(self.save_all)
         self.button_close.clicked.connect(self.close_widget)
+        self.button_create.clicked.connect(self.insert_row)
 
     def initialize_widgets(self):
         pass
@@ -79,3 +80,6 @@ class WidgetCapex(QWidget, Ui_Form_capex):
 
     def close_widget(self):
         self.parentWidget().close()
+
+    def insert_row(self):
+        self.row = self.model_capex.insert_row()

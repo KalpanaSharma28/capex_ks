@@ -57,23 +57,23 @@ class ModelCapex(QSqlRelationalTableModel):
         self.setHeaderData(self.idx_actualrate, Qt.Horizontal, "Actual Rate")
         self.setHeaderData(self.idx_actualquantity, Qt.Horizontal, "Actual Quantity")
         self.setHeaderData(self.idx_remarks, Qt.Horizontal, "Remarks")
-        self.setHeaderData(self.idx_approverid, Qt.Horizontal, "Approver ID")
-        self.setHeaderData(self.idx_areaid, Qt.Horizontal, "Area ID")
-        self.setHeaderData(self.idx_categoryid, Qt.Horizontal, "Category ID")
-        self.setHeaderData(self.idx_subcategoryid, Qt.Horizontal, "SubCategory ID")
-        self.setHeaderData(self.idx_currencyid, Qt.Horizontal, "Currency ID")
-        self.setHeaderData(self.idx_exptypeid, Qt.Horizontal, "ExpType ID")
-        self.setHeaderData(self.idx_frequencyid, Qt.Horizontal, "Frequency ID")
+        self.setHeaderData(self.idx_approverid, Qt.Horizontal, "Approver")
+        self.setHeaderData(self.idx_areaid, Qt.Horizontal, "Area")
+        self.setHeaderData(self.idx_categoryid, Qt.Horizontal, "Category")
+        self.setHeaderData(self.idx_subcategoryid, Qt.Horizontal, "SubCategory")
+        self.setHeaderData(self.idx_currencyid, Qt.Horizontal, "Currency")
+        self.setHeaderData(self.idx_exptypeid, Qt.Horizontal, "ExpType")
+        self.setHeaderData(self.idx_frequencyid, Qt.Horizontal, "Frequency")
         # `ID` is not required in display captions. `Location ID` changed to `Location`.
         #  TODO: Make similar change in other captions with ID.
         self.setHeaderData(self.idx_locationid, Qt.Horizontal, "Location")
-        self.setHeaderData(self.idx_natureid, Qt.Horizontal, "Nature ID")
-        self.setHeaderData(self.idx_originid, Qt.Horizontal, "Origin ID")
-        self.setHeaderData(self.idx_recommendationid, Qt.Horizontal, "Recommendation ID")
-        self.setHeaderData(self.idx_statusid, Qt.Horizontal, "Status ID")
-        self.setHeaderData(self.idx_unitid, Qt.Horizontal, "Unit ID")
-        self.setHeaderData(self.idx_uomid, Qt.Horizontal, "UOM ID")
-        self.setHeaderData(self.idx_vendorid, Qt.Horizontal, "Vendor ID")
+        self.setHeaderData(self.idx_natureid, Qt.Horizontal, "Nature")
+        self.setHeaderData(self.idx_originid, Qt.Horizontal, "Origin")
+        self.setHeaderData(self.idx_recommendationid, Qt.Horizontal, "Recommendation")
+        self.setHeaderData(self.idx_statusid, Qt.Horizontal, "Status")
+        self.setHeaderData(self.idx_unitid, Qt.Horizontal, "Unit")
+        self.setHeaderData(self.idx_uomid, Qt.Horizontal, "UOM")
+        self.setHeaderData(self.idx_vendorid, Qt.Horizontal, "Vendor")
 
         self.setSort(self.idx_capexid, Qt.SortOrder.AscendingOrder)
 
@@ -86,32 +86,67 @@ class ModelCapex(QSqlRelationalTableModel):
         #   Currently this is not used in the capex program.
         # self.relational_model_location = self.relationModel(self.idx_locationid)
 
-        self.setRelation(self.idx_approverid, QSqlRelation("Approver", "ApproverID", "ApproverName"))
-        self.setRelation(self.idx_areaid, QSqlRelation("Area", "AreaID", "AreaName"))
-        self.setRelation(self.idx_categoryid, QSqlRelation("Category", "CategoryID", "Categoryname"))
-        self.setRelation(self.idx_currencyid, QSqlRelation("Currency", "CurrencyID", "CurrencyName"))
-        self.setRelation(self.idx_exptypeid, QSqlRelation("Exptype", "ExptypeID", "ExptypeName"))
-        self.setRelation(self.idx_frequencyid, QSqlRelation("Frequency", "FrequencyID", "FrequencyName"))
-        self.setRelation(self.idx_natureid, QSqlRelation("Nature", "NatureID", "NatureName"))
-        self.setRelation(self.idx_originid, QSqlRelation("Origin", "OriginID", "OriginName"))
-        self.setRelation(self.idx_recommendationid, QSqlRelation("Recommendation", "RecommendationID", "Recommendation"))
-        self.setRelation(self.idx_statusid, QSqlRelation("Status", "StatusID", "StatusName"))
-        self.setRelation(self.idx_subcategoryid, QSqlRelation("SubCategory", "SubCategoryID", "SubCategoryName"))
-        self.setRelation(self.idx_unitid, QSqlRelation("Unit", "UnitID", "UnitName"))
-        self.setRelation(self.idx_uomid, QSqlRelation("UOM", "UOMID", "UOMName"))
-        self.setRelation(self.idx_vendorid, QSqlRelation("Vendor", "VendorID", "VendorName"))
+        self.relation_approver = QSqlRelation("Approver", "ApproverID", "ApproverName")
+        self.setRelation(self.idx_approverid, self.relation_approver)
+
+        self.relation_area = QSqlRelation("Area", "AreaID", "AreaName")
+        self.setRelation(self.idx_areaid, self.relation_area)
+
+        self.relation_category = QSqlRelation("Category", "CategoryID", "Categoryname")
+        self.setRelation(self.idx_categoryid, self.relation_category)
+
+        self.relation_currency = QSqlRelation("Currency", "CurrencyID", "CurrencyName")
+        self.setRelation(self.idx_currencyid, self.relation_currency)
+
+        self.relation_exptype = QSqlRelation("Exptype", "ExptypeID", "ExptypeName")
+        self.setRelation(self.idx_exptypeid, self.relation_exptype)
+
+        self.relation_frequency = QSqlRelation("Frequency", "FrequencyID", "FrequencyName")
+        self.setRelation(self.idx_frequencyid, self.relation_frequency)
+
+        self.relation_nature = QSqlRelation("Nature", "NatureID", "NatureName")
+        self.setRelation(self.idx_natureid, self.relation_nature)
+
+        self.relation_origin = QSqlRelation("Origin", "OriginID", "OriginName")
+        self.setRelation(self.idx_originid, self.relation_origin)
+
+        self.relation_recommendation = QSqlRelation("Recommendation", "RecommendationID", "Recommendation")
+        self.setRelation(self.idx_recommendationid, self.relation_recommendation)
+
+        self.relation_status = QSqlRelation("Status", "StatusID", "StatusName")
+        self.setRelation(self.idx_statusid, self.relation_status)
+
+        self.relation_subcategory = QSqlRelation("SubCategory", "SubCategoryID", "SubCategoryName")
+        self.setRelation(self.idx_subcategoryid, self.relation_subcategory)
+
+        self.relation_unit = QSqlRelation("Unit", "UnitID", "UnitName")
+        self.setRelation(self.idx_unitid, self.relation_unit)
+
+        self.relation_uom = QSqlRelation("UOM", "UOMID", "UOMName")
+        self.setRelation(self.idx_uomid, self.relation_uom)
+
+        self.relation_vendor = QSqlRelation("Vendor", "VendorID", "VendorName")
+        self.setRelation(self.idx_vendorid, self.relation_vendor)
 
 
-
-    """
     def insert_row(self):
         row = self.rowCount()
         record = self.record()
 
         record.setValue("CapexID", None)
-        record.setValue("BudgetNo", "?text?")
+        record.setValue("BudgetNo", "?Budget No?")
+        record.setValue("ProposalDate", "?Proposal Date?")
+        record.setValue("SN","?SN?")
+        record.setValue("DetailsDescription", "?Details Description?")
+        record.setValue("BudgetQuality", "?Budget Quality?")
+        record.setValue("BudgetRate", "?Budget Rate?")
+        record.setValue("BudgetAmount", "?Budget Amount?")
+        record.setValue("ActualQuantity", "?Actual Quantity?")
+        record.setValue("ActualRate", "?Actual Rate?")
+        record.setValue("ActualAmount", "?Actual Amount?")
+        record.setValue("Remarks", "?Remarks?")
 
         return self.insertRecord(row, record)
-    """
+
     def save_all(self):
         return self.submitAll()
