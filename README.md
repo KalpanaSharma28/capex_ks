@@ -59,6 +59,7 @@ Once the application is running, users can perform the following actions:
 -**Data-Driven Decision Making:** With the increasing importance of data-driven decision-making processes, having a robust system like Capex can give organizations a competitive edge by enabling them to make informed decisions based on accurate and up-to-date information.
 -**Compliance and Transparency:** Compliance with financial regulations and transparency in reporting are becoming increasingly important for organizations. Capex helps ensure compliance by maintaining detailed records and providing audit trails for capital expenditures.
 
+## 
 Overall, the Capex project addresses the vital need for efficient capital expenditure management in organizations, offering a user-friendly solution that enhances financial planning, decision making, and compliance efforts.
 
 ---
