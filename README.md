@@ -43,12 +43,5 @@ Once the application is running, users can perform the following actions:
 - **Save Changes:** Click on the "Save" button to save any changes made to Capex entries.
 - **Close Application:** Use the close button in the main window to exit the application.
 
-## Contributing
-
-Contributions to the Capex project are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request on GitHub.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
