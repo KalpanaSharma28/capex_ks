@@ -43,5 +43,22 @@ Once the application is running, users can perform the following actions:
 - **Save Changes:** Click on the "Save" button to save any changes made to Capex entries.
 - **Close Application:** Use the close button in the main window to exit the application.
 
+## How Can It Help Someone?
+
+-**Efficient Capex Management:** The project streamlines the process of managing capital expenditures for organizations by providing a centralized platform for data storage and manipulation.
+-**Improved Data Integrity:** With a structured data model and relational database setup, the project ensures data integrity and consistency across various Capex entries.
+-**User-Friendly Interface:** The user interface is designed to be intuitive and easy to use, enabling users to quickly add, edit, and view Capex entries without technical expertise.
+
+## How Can It Be Useful?
+-**Financial Planning:** Organizations can use Capex to plan and track their capital expenditures, ensuring better financial management and budget allocation.
+-**Decision Making:** Having comprehensive data on capital expenditures allows organizations to make informed decisions regarding investments, resource allocation, and project prioritization.
+-**Compliance and Reporting:** Capex can assist organizations in complying with regulatory requirements and preparing accurate financial reports by maintaining detailed records of capital expenditures.
+
+## Why Is This Project Relevant?
+-**Resource Optimization:** In today's competitive business environment, efficient resource utilization is crucial for success. Capex helps organizations optimize their capital spending by providing tools for effective planning and management.
+-**Data-Driven Decision Making:** With the increasing importance of data-driven decision-making processes, having a robust system like Capex can give organizations a competitive edge by enabling them to make informed decisions based on accurate and up-to-date information.
+-**Compliance and Transparency:** Compliance with financial regulations and transparency in reporting are becoming increasingly important for organizations. Capex helps ensure compliance by maintaining detailed records and providing audit trails for capital expenditures.
+
+Overall, the Capex project addresses the vital need for efficient capital expenditure management in organizations, offering a user-friendly solution that enhances financial planning, decision making, and compliance efforts.
 
 ---
